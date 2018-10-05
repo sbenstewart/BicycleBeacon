@@ -1,0 +1,112 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    10/05/2018  07:31:04  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE code.obj TO uc
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  code.obj (CODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  uc (CODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0019H     UNIT         ?PR?MAIN?CODE
+            CODE    0819H     0018H     UNIT         ?PR?_DELAY?CODE
+            CODE    0831H     000CH     UNIT         ?C_C51STARTUP
+            CODE    083DH     000AH     UNIT         ?PR?CCT_INIT?CODE
+
+
+
+OVERLAY MAP OF MODULE:   uc (CODE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?CODE
+
+?PR?MAIN?CODE
+  +--> ?PR?_DELAY?CODE
+
+
+
+SYMBOL TABLE OF MODULE:  uc (CODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        CODE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0080H         PUBLIC        P0
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0819H         PUBLIC        _delay
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  10/05/2018  07:31:04  PAGE 2
+
+
+  B:0090H.1       PUBLIC        flag
+  C:0800H         PUBLIC        main
+  C:083DH         PUBLIC        cct_init
+  B:0090H.0       PUBLIC        LED
+  -------         PROC          MAIN
+  C:0800H         LINE#         11
+  C:0800H         LINE#         12
+  C:0800H         LINE#         14
+  C:0802H         LINE#         15
+  C:0802H         LINE#         16
+  C:0802H         LINE#         17
+  C:0805H         LINE#         18
+  C:0805H         LINE#         19
+  C:0807H         LINE#         20
+  C:080EH         LINE#         21
+  C:0810H         LINE#         22
+  C:0817H         LINE#         23
+  -------         ENDPROC       MAIN
+  -------         PROC          CCT_INIT
+  C:083DH         LINE#         27
+  C:083DH         LINE#         28
+  C:083DH         LINE#         29
+  C:0840H         LINE#         30
+  C:0842H         LINE#         31
+  C:0844H         LINE#         32
+  C:0846H         LINE#         33
+  -------         ENDPROC       CCT_INIT
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        a
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0819H         LINE#         35
+  C:0819H         LINE#         36
+  C:0819H         LINE#         38
+  C:0830H         LINE#         39
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        CODE
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?CCT_INIT?CODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003BH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=74
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)
